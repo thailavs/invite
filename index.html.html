@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pergunta Sim ou Não</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            background-color: #f9ecec; /* Fundo com leve tom de rosa */
+        }
+
+        .container {
+            text-align: center;
+            background-color: #ffffff; /* Fundo branco puro */
+            padding: 30px;
+            border-radius: 15px;
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
+            border: 2px solid #d9534f; /* Borda vermelha */
+        }
+
+        h1 {
+            margin-bottom: 20px;
+            color: #d9534f; /* Vermelho escuro */
+        }
+
+        p {
+            margin-bottom: 20px;
+            font-size: 18px;
+            color: #333;
+        }
+
+        .buttons {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+        }
+
+        button {
+            padding: 12px 25px;
+            font-size: 16px;
+            color: #fff; /* Texto branco */
+            background-color: #d9534f; /* Vermelho escuro */
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        button:hover {
+            background-color: #c9302c; /* Vermelho mais escuro ao passar o mouse */
+        }
+
+        #resultado {
+            margin-top: 20px;
+            font-weight: bold;
+            color: #d9534f; /* Vermelho escuro */
+        }
+
+        #aviso {
+            margin-top: 10px;
+            color: #c9302c; /* Vermelho escuro */
+            font-size: 16px;
+            display: none; /* Oculto inicialmente */
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1> Quick question:</h1>
+        <p>Dear Natália, considering this link as an invite to go to a place with Thaila at 24 of September.</p>
+        <p>PS: this it's not a date (but could be), I just wanna take you to a place what I want to visit from a while.</p> 
+        <p>PS2: Be careful with your choice.</p>
+
+        <div class="buttons">
+            <button onclick="responder('Yes')">Yes</button>
+            <button onclick="responder('No')">No</button>
+        </div>
+    
+            <p id="resultado"></p>
+        <p id="aviso">You chose the option "No", please come back and change it, because we know you love your beautiful wife!</p>
+    </div>
+
+    <script>
+        function responder(resposta) {
+            // Exibe a resposta escolhida
+            document.getElementById('resultado').innerText = "You responded: " + "Yes. Congratulations and have fun!";
+
+            // Se a resposta for "No", exibe o aviso, caso contrário, esconde
+            if (resposta === 'No') {
+                document.getElementById('aviso').style.display = 'block';
+            } else {
+                document.getElementById('aviso').style.display = 'none';
+            }
+
+            // Loga a resposta no console (ou pode ser armazenada em uma variável para uso futuro)
+            console.log("Resposta escolhida:", resposta);
+        }
+    </script>
+</body>
+</html>
+
